@@ -1,0 +1,276 @@
+/* PayFlow Fintech Styling */
+:root {
+  --primary-navy: #0B192C;
+  --secondary-navy: #1E3E62;
+  --accent-blue: #008DDA;
+  --subtle-blue: #EBF4F6;
+  --bg-page: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Card Component */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  padding: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--secondary-navy);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #152C47;
+}
+
+.btn-accent {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+}
+
+.btn-accent:hover {
+  background-color: #0070AA;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #334155;
+  border-color: #CBD5E1;
+}
+
+.btn-secondary:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+}
+
+.btn-danger {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border-color: #FCA5A5;
+}
+
+.btn-danger:hover {
+  background-color: #F87171;
+  color: #FFFFFF;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 141, 218, 0.15);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  color: var(--text-main);
+}
+
+.form-help {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+/* Data Table */
+.data-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.data-table th {
+  background-color: #F8FAFC;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #F1F5F9;
+  color: #1E293B;
+  vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+  background-color: #F8FAFC;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+/* Simulation Pills */
+.sim-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.sim-pill.success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  border-color: #C8E6C9;
+}
+
+.sim-pill.decline {
+  background-color: #FFF3E0;
+  color: #E65100;
+  border-color: #FFE0B2;
+}
+
+.sim-pill.error {
+  background-color: #FFEBEE;
+  color: #C62828;
+  border-color: #FFCDD2;
+}
+
+/* Responsive queries */
+@media (max-width: 900px) {
+  .sidebar-container {
+    position: fixed !important;
+    left: -260px;
+    transition: left 0.25s ease;
+  }
+  .sidebar-container.open {
+    left: 0;
+  }
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  .user-details {
+    display: none !important;
+  }
+}
